@@ -6,6 +6,10 @@ const questionElement = document.getElementById ('question')
 const answerButtonsElement = document.getElementById ('answer-buttons')
 
 startButton.addEventListener('click', startGame)
+nextButton.addEventListener('click', () => {
+    currentQuestionIndex++
+    setNextQuestion()
+})
 
 function startGame() {
     console.log('Started')
@@ -35,6 +39,7 @@ function showQuestion(question) {
 }
 
 function resetState() {
+    clearStatusClass(document.body)
     nextButton.classList.add('hide')
     while (answerButtonsElement.firstChild) {
         answerButtonsElement.removeChild
@@ -49,11 +54,26 @@ function selectAnswer(e) {
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
+    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+    nextButton.classList.remove('hide')
+    } else {
+        startButton.innerText = 'Restart'
+        startButton.classList.remove('hide')
+    }
 }
 
 function setStatusClass(element, correct) {
     clearStatusClass(element)
-    
+    if (correct) {
+        element.classList.add('correct')
+    } else {
+        element.classList.add('wrong')
+    }
+}
+
+function classStatusClass(element) {
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
 }
 
 const questions = [
@@ -63,8 +83,31 @@ const questions = [
             { text: "1. strings", correct: false},
             { text: "2. booleans", correct: false},
             { text: "3. alerts", correct: true},
-            { text: "4. numbers", correct: false},
-        ]
-        
+            { text: "4. numbers", correct: false}
+        ] 
+    }, 
+    {
+        question: "A very useful tool used during development and debugging for printing content to the debugger is:"
+        answers: [
+            { text: "1. JavaScript", correct: false}, 
+            { text: "2. terminal/bash", correct: false}, 
+            { text: "3. for loops", correct: false}, 
+            { text: "4. console.log", correct: true}
+    },
+    {
+        question: "String values must be enclosed within ______ when being assigned to variables. "
+        answers: [
+            { text: "1. commas", correct: false}, 
+            { text: "2. curly brackets", correct: false}, 
+            { text: "3. quotes", correct: true}, 
+            { text: "4. parenthesis", correct: false}
+    },
+    {
+        question: "The condition in an if / else statement is enclosed with _________."
+        answers: [
+            { text: "1. quotes", correct: false}, 
+            { text: "2. curly brackets", correct: true}, 
+            { text: "3. parenthesis", correct: false}, 
+            { text: "4. square brackets", correct: false}
     }
 ]
