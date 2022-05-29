@@ -4,9 +4,11 @@
 }
 
 :root {
-    --color-neutral: rgb(156, 23, 177);
+    --color-neutral: rgb(240, 240, 231);
     --color-correct: #3bc32c;
     --color-wrong: #d4281c;
+    --button-color: rgb(107, 12, 157);
+    --button-hover: rgb(211, 15, 149);
   }
 
 body {
@@ -18,6 +20,7 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
+    color: var(--color-correct);
 }
 
 body.correct {
@@ -44,8 +47,8 @@ body.wrong {
 }
 
 .btn {
-    background-color: var(--color-neutral);
-    border: 1px solid var(--color-correct);
+    background-color: var(--button-color);
+    border: 1px solid var(--button-color);
     border-radius: 5px;
     padding: 5px 10px;
     color: white; 
@@ -53,7 +56,7 @@ body.wrong {
 }
 
 .btn:hover {
-    border-color: black;
+    background-color: var(--button-hover);
 }
 
 .btn.correct {

@@ -1,5 +1,5 @@
-const startButton = document.getElementByID('start-btn')
-const nextButton = document.getElementByID('next-btn')
+const startButton = document.getElementById('start-btn')
+const nextButton = document.getElementById('next-btn')
 const questionContainerElement = document.getElementById('question-container')
 let shuffledQuestions, currentQuestionIndex
 const questionElement = document.getElementById ('question')
@@ -27,9 +27,10 @@ function setNextQuestion() {
 
 function showQuestion(question) {
     questionElement.innerText = question.question
-    question.answer.forEach(answer => {
+    question.answers.forEach(answer => {
         const button = document.createElement('button')
-        button.innterText -answer.textbutton.classList.add('btn')
+        button.innterText = answer.text
+        button.classList.add('btn')
         if (answer.correct) {
             button.dataset.correct = answer.correct
         }
@@ -71,43 +72,46 @@ function setStatusClass(element, correct) {
     }
 }
 
-function classStatusClass(element) {
+function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
 
 const questions = [
     {
-        question: "Commonly used data types DO Not Include:" ,
+        question: 'Commonly used data types DO Not Include:' ,
         answers: [
-            { text: "1. strings", correct: false},
-            { text: "2. booleans", correct: false},
-            { text: "3. alerts", correct: true},
-            { text: "4. numbers", correct: false}
+            { text: '1. strings', correct: false},
+            { text: '2. booleans', correct: false},
+            { text: '3. alerts', correct: true},
+            { text: '4. numbers', correct: false}
         ] 
     }, 
     {
-        question: "A very useful tool used during development and debugging for printing content to the debugger is:"
+        question: 'A very useful tool used during development and debugging for printing content to the debugger is:',
         answers: [
-            { text: "1. JavaScript", correct: false}, 
-            { text: "2. terminal/bash", correct: false}, 
-            { text: "3. for loops", correct: false}, 
-            { text: "4. console.log", correct: true}
+            { text: '1. JavaScript', correct: false}, 
+            { text: '2. terminal/bash', correct: false}, 
+            { text: '3. for loops', correct: false}, 
+            { text: '4. console.log', correct: true}
+        ]
     },
     {
-        question: "String values must be enclosed within ______ when being assigned to variables. "
+        question: 'String values must be enclosed within ______ when being assigned to variables.',
         answers: [
-            { text: "1. commas", correct: false}, 
-            { text: "2. curly brackets", correct: false}, 
-            { text: "3. quotes", correct: true}, 
-            { text: "4. parenthesis", correct: false}
+            { text: '1. commas', correct: false}, 
+            { text: '2. curly brackets', correct: false}, 
+            { text: '3. quotes', correct: true}, 
+            { text: '4. parenthesis', correct: false}
+        ]
     },
     {
-        question: "The condition in an if / else statement is enclosed with _________."
+        question: 'The condition in an if / else statement is enclosed with _________.',
         answers: [
-            { text: "1. quotes", correct: false}, 
-            { text: "2. curly brackets", correct: true}, 
-            { text: "3. parenthesis", correct: false}, 
-            { text: "4. square brackets", correct: false}
+            { text: '1. quotes', correct: false}, 
+            { text: '2. curly brackets', correct: true}, 
+            { text: '3. parenthesis', correct: false}, 
+            { text: '4. square brackets', correct: false}
+        ]
     }
 ]
