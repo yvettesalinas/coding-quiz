@@ -68,7 +68,7 @@ body.wrong {
     background: var(--color-neutral);
 }
 
-.start-btn, .next-btn {
+.start-btn, .next-btn, .goback-btn, .clear-btn {
     font-size: 1.5rem;
     font-weight: bold;
     padding: 10px 20px;
