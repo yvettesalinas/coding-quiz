@@ -25,6 +25,6 @@ The following images demonstrate the application's appearance:
 ## 🌐 Project Usage
 To view the application, please click on the following link: 
 
-[Coding Quiz](https://yvettesalinas.github.io/coding-quiz/highscores.html/)
+[Coding Quiz](https://yvettesalinas.github.io/coding-quiz/)
 
 
