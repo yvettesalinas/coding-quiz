@@ -1,34 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link href="./assets/css/style.css" rel="stylesheet">
-    <script defer src="./assets/js/script.js"></script>
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiple Choice Coding Quiz</title>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-
 <body>
-    <div class="container"> 
-        <header class>
-            <div class="title">Coding Quiz</div>
-        </header>
-        <div id="question-container" class="hide">
-            <div id="question">QUESTION</div>
-            <div id="answers-buttons" class="btn-grid">
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button>
-            </div>
+    <div class="container">
+        <div id="home" class="flex-column flex-center">
+            <h1>Are you ready?</h1>
+            <a href="./game.html" class="btn">Play</a>
+            <a href="/highscores.html" id="highscore-btn" class="btn">High Scores</a>
+
         </div>
-        <div class="controls">
-            <button id="start-btn" class="start-btn btn">START</button>
-            <button id="next-btn" class="next-btn btn hide">NEXT</button>
-            <a href="highscores.html" class="link">View High Scores</a>
-        </div>
-    </div> 
+    </div>
 </body>
 </html>
